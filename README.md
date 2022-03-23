@@ -14,6 +14,8 @@ Clone the repository
 git clone git@github.com:tungnt247/social-network.git
 ```
 
+Create file `.env` same as file `.env.example`. Fill necessary variales value
+
 Install dependencies
 
 ```shell
