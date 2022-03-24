@@ -2,9 +2,7 @@ from pathlib import Path
 import environ
 import os
 
-env = environ.Env(
-    DEBUG=(bool, False)
-)
+env = environ.Env()
 
 # Set the project base directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +62,7 @@ WSGI_APPLICATION = 'social.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'  : 'django.db.backends.mysql',
-        'NAME'    :env('DB_NAME', default='social_network'),
+        'NAME'    : env('DB_NAME', default='social_network'),
         'USER'    : env('DB_USER', default='root'),
         'PASSWORD': env('DB_PASSWORD', default=''),
         'HOST'    : env('DB_HOST', default='localhost'),
